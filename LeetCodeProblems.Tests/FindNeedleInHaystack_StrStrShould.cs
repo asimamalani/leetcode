@@ -18,7 +18,6 @@ namespace LeetCode.Problems.UnitTests
         [InlineData("", "")]
         [InlineData("   ", "   ")]
         [InlineData("haystack", "   ")]
-        [InlineData("    ", "stack")]
         [InlineData("haystack", "haystack")]
         public void StrStr_InputNullOrWhitespace_Return0(string haystack, string needle)
         {
@@ -47,6 +46,15 @@ namespace LeetCode.Problems.UnitTests
         }
 
         [Theory]
+        [InlineData("mississippi", "issip")]
+        public void StrStr_InputValid_ReturnIndex4(string haystack, string needle)
+        {
+            var result = _findNeedleInHaystack.StrStr(haystack, needle);
+            Assert.StrictEqual<int>(4, result);
+        }
+
+        [Theory]
+        [InlineData("    ", "stack")]
         [InlineData("haystack", "b")]
         [InlineData("haystack", "stack1")]
         [InlineData("haystack", "haystack1")]
