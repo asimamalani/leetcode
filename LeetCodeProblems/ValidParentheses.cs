@@ -4,7 +4,7 @@ namespace LeetCode.Problems
 {
     public class ValidParentheses
     {
-        public static bool IsValid(string input)
+        public bool IsValid(string input)
         {
             if (String.IsNullOrWhiteSpace(input))
             {
