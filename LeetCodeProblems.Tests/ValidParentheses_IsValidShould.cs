@@ -21,5 +21,36 @@ namespace LeetCode.Problems.UnitTests
 
             Assert.True(result, $"{input} is a valid parenthesis expression");
         }
+
+        [Theory]
+        [InlineData("()")]
+        [InlineData("{}")]
+        [InlineData("[]")]
+        [InlineData("[({[[({})]]})]")]
+        public void IsValidParenthesis_InputValidParenthesisExpressions_ReturnTrue(string input)
+        {
+            var result = _validParenthesis.IsValid(input);
+
+            Assert.True(result, $"{input} is a valid parenthesis expression");
+        }
+
+        [Theory]
+        [InlineData("{")]
+        [InlineData("[")]
+        [InlineData("(")]
+        [InlineData("}")]
+        [InlineData("]")]
+        [InlineData(")")]
+        [InlineData("(]")]
+        [InlineData("(])")]
+        [InlineData("(((((((()))))))]")]
+        [InlineData("( )")]
+        [InlineData("( a )")]
+        public void IsValidParenthesis_InputInvalidParnethesisExpressions_ReturnFalse(string input)
+        {
+            var result = _validParenthesis.IsValid(input);
+
+            Assert.False(result, $"{input} is not a valid parenthesis expression");
+        }
     }
 }
