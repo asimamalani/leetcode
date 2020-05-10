@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Problems
+﻿namespace LeetCodeProblems
 {
     public class BinarySearch
     {

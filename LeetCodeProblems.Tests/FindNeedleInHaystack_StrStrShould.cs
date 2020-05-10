@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace LeetCode.Problems.UnitTests
+namespace LeetCodeProblems.UnitTests
 {
     public class FindNeedleInHaystack_StrStrShould
     {
@@ -19,7 +19,7 @@ namespace LeetCode.Problems.UnitTests
         [InlineData("   ", "   ")]
         [InlineData("haystack", "   ")]
         [InlineData("haystack", "haystack")]
-        public void StrStr_InputNullOrWhitespace_Return0(string haystack, string needle)
+        public void InputNullOrWhitespace_Return0(string haystack, string needle)
         {
             var result = _findNeedleInHaystack.StrStr(haystack, needle);
             Assert.StrictEqual<int>(0, result);
@@ -31,7 +31,7 @@ namespace LeetCode.Problems.UnitTests
         [InlineData("haystack", "sta")]
         [InlineData("haystack", "stac")]
         [InlineData("haystack", "stack")]
-        public void StrStr_InputValid_ReturnIndex3(string haystack, string needle)
+        public void InputValid_ReturnIndex3(string haystack, string needle)
         {
             var result = _findNeedleInHaystack.StrStr(haystack, needle);
             Assert.StrictEqual<int>(3, result);
@@ -39,7 +39,7 @@ namespace LeetCode.Problems.UnitTests
 
         [Theory]
         [InlineData("haystack", "a")]
-        public void StrStr_InputValidMultipleMatches_ReturnIndex1(string haystack, string needle)
+        public void InputValidMultipleMatches_ReturnIndex1(string haystack, string needle)
         {
             var result = _findNeedleInHaystack.StrStr(haystack, needle);
             Assert.StrictEqual<int>(1, result);
@@ -47,7 +47,7 @@ namespace LeetCode.Problems.UnitTests
 
         [Theory]
         [InlineData("mississippi", "issip")]
-        public void StrStr_InputValid_ReturnIndex4(string haystack, string needle)
+        public void InputValid_ReturnIndex4(string haystack, string needle)
         {
             var result = _findNeedleInHaystack.StrStr(haystack, needle);
             Assert.StrictEqual<int>(4, result);
@@ -60,7 +60,7 @@ namespace LeetCode.Problems.UnitTests
         [InlineData("haystack", "haystack1")]
         [InlineData("haystack", "aaystack")]
         [InlineData("haystack", "needle")]
-        public void StrStr_InputInvalidNoMatches_ReturnIndexMinus1(string haystack, string needle)
+        public void InputInvalidNoMatches_ReturnIndexMinus1(string haystack, string needle)
         {
             var result = _findNeedleInHaystack.StrStr(haystack, needle);
             Assert.StrictEqual<int>(-1, result);

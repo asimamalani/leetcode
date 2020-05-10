@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace LeetCode.Problems.UnitTests
+namespace LeetCodeProblems.UnitTests
 {
     public class PascalTriangle_ShouldGenerate
     {
@@ -13,7 +13,7 @@ namespace LeetCode.Problems.UnitTests
 
         [Theory]
         [InlineData(5)]
-        public void GeneratePascalTriangle_InputValid_ReturnArray(int numRows)
+        public void InputValid_ReturnArray(int numRows)
         {
             var result = _pt.Generate(numRows);
             Assert.StrictEqual(result.Count, numRows);

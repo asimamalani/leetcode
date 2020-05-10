@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace LeetCode.Problems.UnitTests
+namespace LeetCodeProblems.UnitTests
 {
     public class ValidParentheses_IsValidShould
     {
@@ -15,7 +15,7 @@ namespace LeetCode.Problems.UnitTests
         [InlineData("")]
         [InlineData(null)]
         [InlineData("    ")]
-        public void IsValidParenthesis_InputNullOrWhitespace_ReturnTrue(string input)
+        public void InputNullOrWhitespace_ReturnTrue(string input)
         {
             var result = _validParenthesis.IsValid(input);
 
@@ -27,7 +27,7 @@ namespace LeetCode.Problems.UnitTests
         [InlineData("{}")]
         [InlineData("[]")]
         [InlineData("[({[[({})]]})]")]
-        public void IsValidParenthesis_InputValidParenthesisExpressions_ReturnTrue(string input)
+        public void InputValidParenthesisExpressions_ReturnTrue(string input)
         {
             var result = _validParenthesis.IsValid(input);
 
@@ -46,7 +46,7 @@ namespace LeetCode.Problems.UnitTests
         [InlineData("(((((((()))))))]")]
         [InlineData("( )")]
         [InlineData("( a )")]
-        public void IsValidParenthesis_InputInvalidParnethesisExpressions_ReturnFalse(string input)
+        public void InputInvalidParnethesisExpressions_ReturnFalse(string input)
         {
             var result = _validParenthesis.IsValid(input);
 
