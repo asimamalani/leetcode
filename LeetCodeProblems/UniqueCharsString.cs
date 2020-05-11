@@ -30,11 +30,37 @@ namespace LeetCodeProblems
                 return false;
             }
 
+            //// using an array
+            //return isUniqueCharsArray(str);
+
+            // using a bit vector
+            return isUniqueCharsBitVector(str);
+
+        }
+
+        private bool isUniqueCharsBitVector(string str)
+        {
+            var checker = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                var charVal = str[i] - 'a';
+                if ((checker & (1 << charVal)) > 0)
+                {
+                    return false;
+                }
+
+                checker |= 1 << charVal;
+            }
+            return true;
+        }
+
+        private bool IsUniqueCharsArray(string str)
+        {
             // using an array
             var map = new bool[ASCIICharSetLength];
             foreach (var c in str.ToCharArray())
             {
-                if(map[c])
+                if (map[c])
                 {
                     return false;
                 }
