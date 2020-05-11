@@ -33,9 +33,27 @@ namespace LeetCodeProblems
             //// using an array
             //return isUniqueCharsArray(str);
 
-            // using a bit vector
-            return isUniqueCharsBitVector(str);
+            //// using a bit vector
+            //return isUniqueCharsBitVector(str);
 
+            // using brute force, no additional data structures
+            return isUniqueCharsNoAdditionalDSBruteForce(str);
+
+        }
+
+        private bool isUniqueCharsNoAdditionalDSBruteForce(string str)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                for (int j = i + 1; j < str.Length; j++)
+                {
+                    if (str[i] == str[j])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         private bool isUniqueCharsBitVector(string str)
