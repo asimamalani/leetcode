@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace LeetCodeProblems
 {
@@ -36,9 +35,27 @@ namespace LeetCodeProblems
             //// using a bit vector
             //return isUniqueCharsBitVector(str);
 
-            // using brute force, no additional data structures
-            return isUniqueCharsNoAdditionalDSBruteForce(str);
+            //// using brute force, no additional data structures
+            //return isUniqueCharsNoAdditionalDSBruteForce(str);
 
+            // using sort, no additional data structures
+            return isUniqueCharsNoAdditionalDSSort(str);
+
+        }
+
+        private bool isUniqueCharsNoAdditionalDSSort(string str)
+        {
+            var charArr = str.ToCharArray();
+            Array.Sort(charArr);
+            str = string.Join("", charArr);
+            for (int i = 1; i < str.Length; i++)
+            {
+                if (str[i-1] == str[i])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private bool isUniqueCharsNoAdditionalDSBruteForce(string str)
@@ -74,7 +91,6 @@ namespace LeetCodeProblems
 
         private bool IsUniqueCharsArray(string str)
         {
-            // using an array
             var map = new bool[ASCIICharSetLength];
             foreach (var c in str.ToCharArray())
             {
